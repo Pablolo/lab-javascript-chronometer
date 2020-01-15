@@ -9,15 +9,23 @@ class Timer {
   }
   start() {
     this.seconds = 0;
+    this.minutes = 0;
     this.intervalId = setInterval(() => {
-      console.log(this.seconds);
+      console.log(`${this.minutes} minutes ${this.seconds} seconds`);
       this.seconds ++; 
     }, 1000);
+    if (this.seconds === 60) {
+      this.seconds = 0;
+      this.minutes +1;
+    }
+    // cuando seconds llega a 60, ponerlo a cero y darle 1 a minuto
   }
   stop() {
     clearInterval(this.intervalId);
+    console.log('Timer stopped!');
   }
   reset() {
+    console.log('Resetting Timer!');
     this.seconds = 0;
   }
   showTime() {
