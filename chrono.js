@@ -8,16 +8,17 @@ class Timer {
     this.intervalId = 0;
   }
   start() {
-    this.seconds = 0;
+    this.seconds = 50;
     this.minutes = 0;
     this.intervalId = setInterval(() => {
       console.log(`${this.minutes} minutes ${this.seconds} seconds`);
       this.seconds ++; 
+      if (this.seconds === 60) {
+        this.seconds = 0;
+        this.minutes += 1;
+      }
     }, 1000);
-    if (this.seconds === 60) {
-      this.seconds = 0;
-      this.minutes +1;
-    }
+    
     // cuando seconds llega a 60, ponerlo a cero y darle 1 a minuto
   }
   stop() {
