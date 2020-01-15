@@ -18,19 +18,17 @@ class Timer {
         this.minutes += 1;
       }
     }, 1000);
-    
-    // cuando seconds llega a 60, ponerlo a cero y darle 1 a minuto
   }
   stop() {
     clearInterval(this.intervalId);
-    console.log('Timer stopped!');
+    console.log('Timer stopped');
   }
   reset() {
     console.log('Resetting Timer!');
     this.seconds = 0;
   }
   showTime() {
-
+    alert(`The timer is right now on ${this.minutes} minutes ${this.seconds} seconds`);
   }
 }
 
