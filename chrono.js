@@ -3,17 +3,20 @@
 // metodo showtime dentro de la clase para que me muestre el tiempo que tiene en ese momento
 
 class Timer {
-  constructor {
+  constructor(seconds, minutes) {
     this.seconds = seconds;
     this.minutes = minutes;
+    this.intervalId = 0;
   }
   start() {
-
+    this.seconds = 0;
+    this.intervalId = setInterval(() => {
+      console.log(this.seconds);
+      this.seconds ++; 
+    }, 1000);
   }
   stop() {
-
-
-    //clear interval para pararlo
+    clearInterval(this.intervalId);
   }
   reset() {
 
@@ -25,8 +28,8 @@ class Timer {
 
 let myTimer = new Timer();
 
-myTimer.stop();
 myTimer.start();
+myTimer.stop();
 myTimer.reset();
 myTimer.start();
 
