@@ -8,7 +8,7 @@ class Timer {
     this.intervalId = 0;
   }
   start() {
-    this.seconds = 50;
+    this.seconds = 0;
     this.minutes = 0;
     this.intervalId = setInterval(() => {
       console.log(`${this.minutes} minutes ${this.seconds} seconds`);
