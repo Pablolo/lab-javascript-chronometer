@@ -23,9 +23,10 @@ class Timer {
   }
   reset() {
     console.log('Resetting Timer!');
+    clearInterval(this.intervalId);
     this.seconds = 0;
     this.minutes = 0;
-    this.start();
+    myTimer.start();
   }
   showTime() {
     alert(`The timer is right now on ${this.minutes} minutes ${this.seconds} seconds`);
